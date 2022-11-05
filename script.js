@@ -7,6 +7,9 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
+// User input function
+// TODO: Find and create a way to read user selection from button presses on prompts
+//       Store the user selections to apply in later functions
 function userInput() {
   var length = window.prompt("How many characters long should the password be? \nPlease choose a number between 8 and 128.");
 
@@ -20,10 +23,15 @@ if (length < 8 || length > 128 || isNaN(length)) {
 }
 }
 
+// Apply user input function
+// TODO: Find out how to randomize the possible selections
+//       Apply stored user selections to randomizer
 function userSelection() {
   var test2 = userInput();
 }
 
+// Generate password function
+// TODO: Find a way to finalize the password from the given user selections and display it on the page
 function generatePassword() {
   var test = userSelection();
 }
