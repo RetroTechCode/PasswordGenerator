@@ -1,4 +1,5 @@
 // Assignment code here
+// All possible characters from each userInput choice are stored here.
 var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
@@ -8,8 +9,8 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", 
 var generateBtn = document.querySelector("#generate");
 
 // User input function
-// TODO:
-//       Store the user selections to apply in later functions
+// Completed? I don't believe there's more to do here. Closing issue.
+// Remove above note later
 function userInput() {
   var length = window.prompt("How many characters long should the password be? \nPlease choose a number between 8 and 128.");
 
@@ -40,14 +41,20 @@ function userInput() {
 // Apply user input function
 // TODO: Find out how to randomize the possible selections
 //       Apply stored user selections to randomizer
-function userSelection() {
-  var test2 = userInput();
+
+// Created a random number generator returning its answer
+function randomize() {
+  var test1 = Math.floor(Math.random() * 100 + 1)
+  return test1
 }
 
 // Generate password function
 // TODO: Find a way to finalize the password from the given user selections and display it on the page
+
+// Console logging the returned answer from the function randomize()
 function generatePassword() {
-  var test = userSelection();
+  var test = userInput();
+  console.log(randomize())
 }
 
 // Write password to the #password input
