@@ -7,19 +7,25 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword() {
-  var length = window.prompt("How many characters long should the password be?")
-  var uppercaseChoice = window.prompt("Do you want to include uppercase characters? (Y/N)");
-  var lowercaseChoice = window.prompt ("Do you want to include lowercase characters? (Y/N)");
-  var numbersChoice = window.prompt ("Do you want to include numbers? (Y/N)");
-  var specialChoice = window.prompt ("Do you want to include special characters? (Y/N)");
+function userInput() {
+  var length = window.prompt("How many characters long should the password be? \nPlease choose a number between 8 and 128.");
 
-if (length > 8 && length < 128) {
-  console.log("Continue")
+if (length < 8 || length > 128 || isNaN(length)) {
+  window.alert("Error! Please try again and choose a number between 8 and 128.")
 } else {
-  console.log ("Failure")
+  var uppercaseChoice = window.prompt("Do you want to include uppercase characters? \nPress Okay for Yes \nPress Cancel for No");
+  var lowercaseChoice = window.prompt ("Do you want to include lowercase characters? \nPress Okay for Yes \nPress Cancel for No");
+  var numbersChoice = window.prompt ("Do you want to include numbers? \nPress Okay for Yes \nPress Cancel for No");
+  var specialChoice = window.prompt ("Do you want to include special characters? \nPress Okay for Yes \nPress Cancel for No");
 }
-  return "Generated Password Test";
+}
+
+function userSelection() {
+  var test2 = userInput();
+}
+
+function generatePassword() {
+  var test = userSelection();
 }
 
 // Write password to the #password input
