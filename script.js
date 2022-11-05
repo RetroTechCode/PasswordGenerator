@@ -8,23 +8,32 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", 
 var generateBtn = document.querySelector("#generate");
 
 // User input function
-// TODO: Find and create a way to read user selection from button presses on prompts
+// TODO:
 //       Store the user selections to apply in later functions
 function userInput() {
   var length = window.prompt("How many characters long should the password be? \nPlease choose a number between 8 and 128.");
 
-if (length < 8 || length > 128 || isNaN(length)) {
-  window.alert("Error! Please try again and choose a number between 8 and 128.")
-} else {
-  var uppercaseChoice = window.confirm ("Do you want to include uppercase characters? \nPress OK for Yes \nPress Cancel for No");
-  var lowercaseChoice = window.confirm ("Do you want to include lowercase characters? \nPress OK for Yes \nPress Cancel for No");
-  var numbersChoice = window.confirm ("Do you want to include numbers? \nPress OK for Yes \nPress Cancel for No");
-  var specialChoice = window.confirm ("Do you want to include special characters? \nPress OK for Yes \nPress Cancel for No");
+  if (length < 8 || length > 128 || isNaN(length)) {
+    window.alert("Error! Please try again and choose a number between 8 and 128.")
+  } else {
+    var uppercaseChoice = window.confirm("Do you want to include uppercase characters? \nPress OK for Yes \nPress Cancel for No");
+    var lowercaseChoice = window.confirm("Do you want to include lowercase characters? \nPress OK for Yes \nPress Cancel for No");
+    var numbersChoice = window.confirm("Do you want to include numbers? \nPress OK for Yes \nPress Cancel for No");
+    var specialChoice = window.confirm("Do you want to include special characters? \nPress OK for Yes \nPress Cancel for No");
 
-  if (uppercaseChoice === false && lowercaseChoice === false && numbersChoice === false && specialChoice === false) {
-    window.alert("Error! Please select at least one character type.")
+    if (uppercaseChoice === false && lowercaseChoice === false && numbersChoice === false && specialChoice === false) {
+      window.alert("Error! Please select at least one character type.")
+    }
   }
-}
+
+  // Creating object to contain all of the user selections as properties
+  var userSelection = {
+    length: length,
+    uppercaseChoice: uppercaseChoice,
+    lowercaseChoice: lowercaseChoice,
+    numbersChoice: numbersChoice,
+    specialChoice: specialChoice,
+  }
 
 }
 
