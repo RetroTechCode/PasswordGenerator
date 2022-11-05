@@ -16,11 +16,16 @@ function userInput() {
 if (length < 8 || length > 128 || isNaN(length)) {
   window.alert("Error! Please try again and choose a number between 8 and 128.")
 } else {
-  var uppercaseChoice = window.prompt("Do you want to include uppercase characters? \nPress Okay for Yes \nPress Cancel for No");
-  var lowercaseChoice = window.prompt ("Do you want to include lowercase characters? \nPress Okay for Yes \nPress Cancel for No");
-  var numbersChoice = window.prompt ("Do you want to include numbers? \nPress Okay for Yes \nPress Cancel for No");
-  var specialChoice = window.prompt ("Do you want to include special characters? \nPress Okay for Yes \nPress Cancel for No");
+  var uppercaseChoice = window.confirm ("Do you want to include uppercase characters? \nPress OK for Yes \nPress Cancel for No");
+  var lowercaseChoice = window.confirm ("Do you want to include lowercase characters? \nPress OK for Yes \nPress Cancel for No");
+  var numbersChoice = window.confirm ("Do you want to include numbers? \nPress OK for Yes \nPress Cancel for No");
+  var specialChoice = window.confirm ("Do you want to include special characters? \nPress OK for Yes \nPress Cancel for No");
+
+  if (uppercaseChoice === false && lowercaseChoice === false && numbersChoice === false && specialChoice === false) {
+    window.alert("Error! Please select at least one character type.")
+  }
 }
+
 }
 
 // Apply user input function
