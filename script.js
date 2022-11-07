@@ -53,21 +53,27 @@ function generatePassword() {
   var finalPassword = [];
 
   if (choice.uppercaseChoice) {
-
+    selectedCharacters = selectedCharacters.concat(uppercase);
   }
 
   if (choice.lowercaseChoice) {
-
+    selectedCharacters = selectedCharacters.concat(lowercase);
   }
 
   if (choice.numbersChoice) {
-
+    selectedCharacters = selectedCharacters.concat(numbers);
   }
 
   if (choice.specialChoice) {
-
+    selectedCharacters = selectedCharacters.concat(special);
   }
 
+  for (var i = 0; i < choice.length; i++) {
+    var randomCharacter = randomize(selectedCharacters);
+    finalPassword.push(randomCharacter);
+  }
+
+  return finalPassword.join('');
 
 }
 
