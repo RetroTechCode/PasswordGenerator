@@ -45,7 +45,6 @@ function randomize(x) {
 }
 
 // Generate password function
-// TODO: Find a way to finalize the password from the given user selections and display it on the page
 function generatePassword() {
   var choice = userInput();
   var selectedCharacters = [];
@@ -54,18 +53,22 @@ function generatePassword() {
 
   if (choice.uppercaseChoice) {
     selectedCharacters = selectedCharacters.concat(uppercase);
+    criteriaCheck.push(randomize(uppercase));
   }
 
   if (choice.lowercaseChoice) {
     selectedCharacters = selectedCharacters.concat(lowercase);
+    criteriaCheck.push(randomize(lowercase));
   }
 
   if (choice.numbersChoice) {
     selectedCharacters = selectedCharacters.concat(numbers);
+    criteriaCheck.push(randomize(numbers));
   }
 
   if (choice.specialChoice) {
     selectedCharacters = selectedCharacters.concat(special);
+    criteriaCheck.push(randomize(special));
   }
 
   for (var i = 0; i < choice.length; i++) {
@@ -73,8 +76,11 @@ function generatePassword() {
     finalPassword.push(randomCharacter);
   }
 
-  return finalPassword.join('');
+  for (var i = 0; i < criteriaCheck.length; i++) {
+    finalPassword[i] = criteriaCheck[i];
+  }
 
+  return finalPassword.join('');
 }
 
 // Write password to the #password input
