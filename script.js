@@ -9,8 +9,6 @@ var special = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "=", 
 var generateBtn = document.querySelector("#generate");
 
 // User input function
-// Completed? I don't believe there's more to do here. Closing issue.
-// Remove above note later
 function userInput() {
   var length = window.prompt("How many characters long should the password be? \nPlease choose a number between 8 and 128.");
 
@@ -35,15 +33,11 @@ function userInput() {
     numbersChoice: numbersChoice,
     specialChoice: specialChoice,
   }
-  
+
   return userSelection;
 }
 
 // Apply user input function
-// TODO: Find out how to randomize the possible selections
-//       Apply stored user selections to randomizer
-
-// Created a random number generator returning its answer
 function randomize(x) {
   var randomNumber = Math.floor(Math.random() * x.length);
   var randomResult = x[randomNumber];
@@ -52,11 +46,29 @@ function randomize(x) {
 
 // Generate password function
 // TODO: Find a way to finalize the password from the given user selections and display it on the page
-
-// Console logging the returned answer from the function randomize()
 function generatePassword() {
-  var test = userInput();
-  console.log(randomize())
+  var choice = userInput();
+  var selectedCharacters = [];
+  var criteriaCheck = [];
+  var finalPassword = [];
+
+  if (choice.uppercaseChoice) {
+
+  }
+
+  if (choice.lowercaseChoice) {
+
+  }
+
+  if (choice.numbersChoice) {
+
+  }
+
+  if (choice.specialChoice) {
+
+  }
+
+
 }
 
 // Write password to the #password input
