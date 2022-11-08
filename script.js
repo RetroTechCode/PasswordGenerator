@@ -116,3 +116,5 @@ generateBtn.addEventListener("click", writePassword);
 // Back in the writePassword function the 'password' variable now = finalPassword.
 // The javascript now calls the #password ID from the HTML and replaces the text within that field from "Your Secure Password" with the
 // final generated password.
+// I spent some time reading through and trying to understand the reference code as I went through this challenge. These notes are a result of my
+// time spent double checking myself and making sure I understood each process as I was going through this challenge.
